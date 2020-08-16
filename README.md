@@ -1,10 +1,4 @@
-# Analog Clock
+# Basic implementation of a digital clock which is out of multiple clocks - Was build for the Flutter-Clock competition
 
-This app is an example of an analog clock.
-It has a light theme and a dark theme, and displays sample weather and location data.
+![alt text](https://github.com/Numoy/flutter_clock/blob/master/digital-clock.jpg?raw=true)
 
-<img src='analog.gif' width='350'>
-
-<img src='analog_dark.png' width='350'>
-
-<img src='analog_light.png' width='350'>
