@@ -34,8 +34,7 @@ class ContainerHand extends Hand {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: SizedBox.expand(
-        child: Transform.rotate(
+      child: Transform.rotate(
           angle: angleRadians,
           alignment: Alignment.center,
           child: Transform.scale(
@@ -47,7 +46,7 @@ class ContainerHand extends Hand {
             ),
           ),
         ),
-      ),
+      
     );
   }
 }

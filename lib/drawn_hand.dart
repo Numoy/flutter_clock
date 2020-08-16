@@ -17,7 +17,7 @@ class DrawnHand extends Hand {
   /// Create a const clock [Hand].
   ///
   /// All of the parameters are required and must not be null.
-  const DrawnHand({
+  DrawnHand({
     @required Color color,
     @required this.thickness,
     @required double size,
@@ -37,15 +37,17 @@ class DrawnHand extends Hand {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: SizedBox.expand(
-        child: CustomPaint(
-          painter: _HandPainter(
-            handSize: size,
-            lineWidth: thickness,
-            angleRadians: angleRadians,
-            color: color,
-          ),
+    return FittedBox(
+          child: SizedBox(
+        width: 15,
+        height: 15,
+            child: CustomPaint(
+              painter: _HandPainter(
+                handSize: size,
+                lineWidth: thickness,
+                angleRadians: angleRadians,
+                color: color,
+              ),
         ),
       ),
     );
@@ -74,14 +76,14 @@ class _HandPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final center = (Offset.zero & size).center;
-    // We want to start at the top, not at the x-axis, so add pi/2.
-    final angle = angleRadians - math.pi / 2.0;
+    final angle = angleRadians ;
     final length = size.shortestSide * 0.5 * handSize;
     final position = center + Offset(math.cos(angle), math.sin(angle)) * length;
     final linePaint = Paint()
       ..color = color
       ..strokeWidth = lineWidth
       ..strokeCap = StrokeCap.square;
+
 
     canvas.drawLine(center, position, linePaint);
   }
